@@ -1,0 +1,29 @@
+// App Name: Infinity Corkboard
+
+/*  PSEUDO CODE
+
+- Get 16 images from Nasa's Astronomy Pictures Of The Day API
+
+- Display images on the page in a grid
+
+- Allow the user to select as many of the images as they wish
+
+- When the user refreshes the page (or clicks a button) the selected images will remain while unselected images are updated
+
+- A save button allows the user to save collage */
+
+
+
+The name of this project would be Infinity Corkboard. It loads images for Nasa's Astronomy Picture Of The Day API and display 16 images in a full bleed grid. The user can select images they preferred to "pin" them allowing them to be saved in place and the remain images to be refresh. The would be a button to refresh images, shading and border on selected images which disappear on refresh so the user can enjoy the collage. 
+
+note: the wireframe was rendered in photoshop not coded out.
+
+
+MVP 
+- Load images to page
+- Allowing image selection with visual indication to disappear on refresh
+- Allow selected images to remain while reloading the rest
+
+STRETCH
+1. allow the user to save a snapshot of the whole gallery
+2. make sure the snapshot is cropped to the gallery
