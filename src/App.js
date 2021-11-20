@@ -36,13 +36,16 @@ function App() {
   return (
     <div class="App">
         <section class="corkboard">
+          <form action="_blank">
           <div class="wrapper">
+            
             <PostImage 
               imageArray={imageResults}
             />
-
           </div>
-        <p>Pin your favourite images. Refresh what's left</p>
+        <p>Pin your favourite images. Refresh what's left</p> 
+        <button type="submit">Click Me</button>
+        </form>
         </section>
         <footer>
 

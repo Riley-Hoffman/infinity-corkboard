@@ -3,7 +3,11 @@ function PostImage(prop) {
         prop.imageArray.map(image => {
             return (
         <div class="imageContainer">
+            {/* for and ID attributes must be variables */}
+            <label htmlFor="checkbox">
+            <input class="checkbox" type="checkbox" id="checkbox" />
             <img class="galleryImage" src={image.url} alt={image.title} />
+            </label>
         </div>
             )
         })
