@@ -2,6 +2,7 @@ import './App.css';
 
 import { useState, useEffect } from 'react';
 import PostImage from './PostImage';
+import Canvas from './Canvas';
 // import Refresh from './Refresh';
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
     const url = new URL(apiUrl);
     url.search = new URLSearchParams({
       api_key: apiKey,
-      count: 100,/* take extra images for bank */
+      count: 16,/* take extra images for bank */
     })
 
     fetch(url)
@@ -46,7 +47,9 @@ function App() {
       <div class="App">
         <section class="corkboard">
           <form action="_blank">
+             {/* look into <canvas> */}
             <div class="wrapper">
+             
               {
                 <PostImage
                   imageArray={imageBank}
@@ -55,8 +58,12 @@ function App() {
               }
             </div>
             <p>Pin your favourite images. Refresh what's left</p>
-            <button type="submit">Click Me</button>
           </form>
+          {
+            // Does it need this pass?
+            <Canvas imageArray={imageBank}/>
+          }
+          <canvas class="canvasHidden" id="canvas"></canvas>
         </section>
         <footer>
 

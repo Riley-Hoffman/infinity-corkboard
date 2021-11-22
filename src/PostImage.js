@@ -3,10 +3,10 @@ function PostImage(prop) {
     let imagesOnly = prop.imageArray.filter(obj => {
         return obj.media_type === 'image'
     })
-   
-    
+
+
     const handleClick = (e) => {
-        
+
         /*randomized image swap */
         // e.target.src = (imagesOnly[Math.floor(Math.random() * imagesOnly.length)].url)
         // e.target.key = (imagesOnly[Math.floor(Math.random() * imagesOnly.length)].id)
@@ -20,15 +20,15 @@ function PostImage(prop) {
         e.target.alt = imagesOnly[e.target.id].title
         e.target.title = imagesOnly[e.target.id].title
 
-        
+
         // Remove object with matching index
         imagesOnly.splice(e.target.id, 1);
-    
+
         console.log(targetTitle, "e.target.id")
         console.log(imagesOnly, "succesS?")
-       
+
     }
-    
+
     return (
         imagesOnly.slice(0, 16).map((image, index) => {
             // AVOID RECURRING IMAGES 
@@ -42,26 +42,26 @@ function PostImage(prop) {
             // imagesOnly.splice(0, 1);
             console.log(imagesOnly, 'No removal')
             const remove = imagesOnly.splice(0, 1)
-           
+
             console.log(image, 'image argument')
             console.log(imagesOnly, 'remove')
             console.log(imagesOnly, 'original images only Array')
-        
-        
+
+
             return (
                 <div key={`imageContainer${index}`} className="imageContainer" >
-            {/* for and ID attributes must be variables */}
+                    {/* for and ID attributes must be variables */}
                     <label key={`label${index}`} htmlFor={index}>
-                        <input key={`input${index}`} className="checkbox" type="checkbox" id={index} />
-                        <img key={`image${image.date}`} className="galleryImage" src={image.url} alt={image.title} title={image.title} id={index} onClick={handleClick}/>
+                        <input key={`input${index}`} className="checkbox" type="checkbox" id={`checkbox${index}`} />
+                        <img key={`image${image.date}`} className="galleryImage" src={image.url} alt={image.title} title={image.title} id={index} onClick={handleClick} />
                     </label>
                 </div>
             )
-        }) 
-        
-        
+        })
+
+
     )
- 
+
 }
 
 export default PostImage
