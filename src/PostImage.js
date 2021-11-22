@@ -1,45 +1,67 @@
 function PostImage(prop) {
+
+    let imagesOnly = prop.imageArray.filter(obj => {
+        return obj.media_type === 'image'
+    })
+   
+    
+    const handleClick = (e) => {
+        
+        /*randomized image swap */
+        // e.target.src = (imagesOnly[Math.floor(Math.random() * imagesOnly.length)].url)
+        // e.target.key = (imagesOnly[Math.floor(Math.random() * imagesOnly.length)].id)
+        // e.target.alt = (imagesOnly[Math.floor(Math.random() * imagesOnly.length)].title)
+        // AVOID RECURRING IMAGES 
+        const targetTitle = e.target.title
+
+        /* take images with same index */
+        e.target.src = imagesOnly[e.target.id].url
+        e.target.key = imagesOnly[e.target.id].id
+        e.target.alt = imagesOnly[e.target.id].title
+        e.target.title = imagesOnly[e.target.id].title
+
+        
+        // Remove object with matching index
+        imagesOnly.splice(e.target.id, 1);
+    
+        console.log(targetTitle, "e.target.id")
+        console.log(imagesOnly, "succesS?")
+       
+    }
+    
     return (
-        prop.imageArray.map(image => {
+        imagesOnly.slice(0, 16).map((image, index) => {
+            // AVOID RECURRING IMAGES 
+            // take each image out of the array as it comes in
+
+            // imagesOnly.splice(0, 1)
+            // Variables for object with with same index
+            // const sameDate = (i) => i.date === image.date;
+            // Remove matching object
+            // const indexToRemove = image.id
+            // imagesOnly.splice(0, 1);
+            console.log(imagesOnly, 'No removal')
+            const remove = imagesOnly.splice(0, 1)
+           
+            console.log(image, 'image argument')
+            console.log(imagesOnly, 'remove')
+            console.log(imagesOnly, 'original images only Array')
+        
+        
             return (
-        <div class="imageContainer">
+                <div key={`imageContainer${index}`} className="imageContainer" >
             {/* for and ID attributes must be variables */}
-            <label htmlFor="checkbox">
-            <input class="checkbox" type="checkbox" id="checkbox" />
-            <img class="galleryImage" src={image.url} alt={image.title} />
-            </label>
-        </div>
+                    <label key={`label${index}`} htmlFor={index}>
+                        <input key={`input${index}`} className="checkbox" type="checkbox" id={index} />
+                        <img key={`image${image.date}`} className="galleryImage" src={image.url} alt={image.title} title={image.title} id={index} onClick={handleClick}/>
+                    </label>
+                </div>
             )
-        })
+        }) 
+        
         
     )
+ 
 }
 
 export default PostImage
-
-// function postImage(image) {
-//     // Query for gallery div
-//     const gallery = document.querySelector('section > div')
-
-//     // Create div to hold image
-//     const imageBox = document.createElement('div')
-//     // Add class to container
-//     imageBox.classList.add('imageContainer')
-//     // Create image element
-//     const imageBoxContent = `<img class="galleryImage" src="${image.url}" alt="${image.title}" />`
-//     // Add img to imageBox
-//     imageBox.innerHTML = imageBoxContent
-//     // Append the all images to the gallery
-//     gallery.appendChild(imageBox)
-// }
-
-    // art.map(artwork => {
-    //     return (
-    //         <PieceOfArt
-    //             key={artwork.id}
-    //             alt={artwork.title}
-    //             title={artwork.longTitle}
-    //             imagePath={artwork.webImage.url}
-    //         />
-    //     )
-    // })

@@ -2,23 +2,30 @@ import './App.css';
 
 import { useState, useEffect } from 'react';
 import PostImage from './PostImage';
+// import Refresh from './Refresh';
 
 function App() {
-  const [imageResults, setImageResults] = useState([])
+  // const [imageBankFilterBySelect, setimageBankFilterBySelect] = useState([])
+  const [imageBank, setImageBank] = useState([])
 
   const apiKey = `bBLy3UXdINwKz9wF5H7c3bENIessM51W3V2tpXR4`;
 
   const apiUrl = `https://api.nasa.gov/planetary/apod`;
-
+  
+// store a bank with extra imgs
+// 
+// for selection use State - where it's selected or to reload
+// do on click on the image the do a function where you swap the url/attributes
+// or 2 arrays selected, unselected 
 
   useEffect(() => {
-
-   
-    // API information
+  
+    console.log(imageBank.length, "imageBank length")
+    // API information  
     const url = new URL(apiUrl);
     url.search = new URLSearchParams({
       api_key: apiKey,
-      count: 16 /* variable for 16 minus whatever is in the database, for example */
+      count: 100,/* take extra images for bank */
     })
 
     fetch(url)
@@ -26,32 +33,36 @@ function App() {
         return response.json();
       })
       .then((jsonResponse) => {
-        console.log(jsonResponse)
-        setImageResults(jsonResponse) 
+        // Send All 100 images to imageBank
+        
+        setImageBank(/*[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(sixteen => */jsonResponse/*[sixteen])*/)
+        
       })
+
   }, [])
 
-
-
-  return (
-    <div class="App">
+  console.log(imageBank.length, "imageBank length")
+    return (
+      <div class="App">
         <section class="corkboard">
           <form action="_blank">
-          <div class="wrapper">
-            
-            <PostImage 
-              imageArray={imageResults}
-            />
-          </div>
-        <p>Pin your favourite images. Refresh what's left</p> 
-        <button type="submit">Click Me</button>
-        </form>
+            <div class="wrapper">
+              {
+                <PostImage
+                  imageArray={imageBank}
+                />
+
+              }
+            </div>
+            <p>Pin your favourite images. Refresh what's left</p>
+            <button type="submit">Click Me</button>
+          </form>
         </section>
         <footer>
 
         </footer>
-    </div>
-  );
+      </div>
+    );
 }
 
 export default App;
@@ -104,22 +115,48 @@ export default App;
 
 
 
-  //   // add the event listener to watch for changes to our database
-  //   // dbRef.on('value', (response) => {
+// function refresh() {
+//   // Save form in a variable
+//   const form = document.querySelector('form')
+//   form.addEventListener(`submit`, function (e) {
+
+
+//     // prevent page reload on form submissions
+//     e.preventDefault();
+//     // Save user's selections in a variable
+//     const checkbox = document.querySelectorAll('.checkbox:checked');
+//     // Save unselected images in a variable ---DOESN"T WORK
+//     // const imagesToKeep = document.querySelectorAll('.checkbox:unchecked')
+//     // Save user's selections in a variable
+//     const checkedValue = checkbox.length
+
+//     // Calculate new number of images to call
+//     if (checkedValue === null || checkedValue === undefined || checkedValue === 0) {
+//       selectionObject.numImagesToChange = 16
+//       console.log(selectionObject.numImagesToChange, '1')
+//     } else {
+//       selectionObject.numImagesToChange = 16 - checkedValue
+//       console.log(selectionObject.numImagesToChange, '2')
+//     }
+
+//     // New API Call   
+//     const url = new URL(apiUrl);
+//     url.search = new URLSearchParams({
+//       api_key: apiKey,
+//       count: selectionObject.numImagesToChange,
+//     })
+
+//     fetch(url)
+//       .then((response) => {
+//         return response.json();
+//       })
+//       .then((jsonResponse) => {
+//         console.log(jsonResponse)
+//         setImageResults(jsonResponse)
+//       })
+//     // refresh()
 
 
 
-  //   //   const data = response;
-  //   //   // iterate through the data object
-  //   //   data.forEach(newImg => {
-
-
-  //   //     newState.push(newImg);
-  //   //   })
-  //   // })
-
-
-  //   // 
-  //   // setImages(newState);
-  //   console.log(dbRef, "dbRef")
-  // }
+//   });
+// }
