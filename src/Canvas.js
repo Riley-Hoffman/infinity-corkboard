@@ -41,7 +41,7 @@ function Canvas(prop) {
 
 
     return (
-        <div className={`bottomRow ${bottomRowLoadState}`}>
+        <div className={`bottomRow ${bottomRowLoadState} wrapper`}>
             <p>Click or tap images change them.</p>
             <button onClick={handleClick}>Save Gallery</button>
         </div>

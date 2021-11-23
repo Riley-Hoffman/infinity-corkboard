@@ -55,8 +55,6 @@ function App() {
       <div className="App">
         <main>
           <section className="corkboard">
-            {/* <form action="_blank"> */}
-              {/* look into <canvas> */}
               <div className="loader">
               
                 {
@@ -69,10 +67,8 @@ function App() {
               {
                 <HeadingOne />
               }
-            {/* </form> */}
               {
-                // Does it need this pass?
-                <Canvas imageArray={imageBank} />
+                <Canvas />
               }
             <canvas className="canvasHidden" id="canvas"></canvas>
           </section>

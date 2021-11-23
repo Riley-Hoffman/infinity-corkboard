@@ -16,7 +16,7 @@ function Footer(prop) {
 
 
     return (
-        <footer className={footerLoadState}>
+        <footer className={`wrapper ${footerLoadState}`}>
             <a href="https://junocollege.com/">Created at Juno College</a>
             <div className="flexBox">
                 <a href="https://github.com/Riley-Hoffman?tab=repositories">
