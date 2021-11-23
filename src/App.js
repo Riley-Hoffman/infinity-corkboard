@@ -26,7 +26,7 @@ function App() {
     const url = new URL(apiUrl);
     url.search = new URLSearchParams({
       api_key: apiKey,
-      count: 16,/* take extra images for bank */
+      count: 100,/* take extra images for bank */
     })
 
     fetch(url)
@@ -37,18 +37,18 @@ function App() {
         // Send All 100 images to imageBank
         
         setImageBank(/*[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(sixteen => */jsonResponse/*[sixteen])*/)
-        
+  
       })
 
   }, [])
 
-  console.log(imageBank.length, "imageBank length")
+  
     return (
-      <div class="App">
-        <section class="corkboard">
+      <div className="App">
+        <section className="corkboard">
           <form action="_blank">
              {/* look into <canvas> */}
-            <div class="wrapper">
+            <div className="wrapper">
              
               {
                 <PostImage
@@ -57,13 +57,15 @@ function App() {
 
               }
             </div>
-            <p>Pin your favourite images. Refresh what's left</p>
           </form>
-          {
-            // Does it need this pass?
-            <Canvas imageArray={imageBank}/>
-          }
-          <canvas class="canvasHidden" id="canvas"></canvas>
+          <div className="flexBox bottomRow">
+            <p>Pin your favourite images. Refresh what's left</p>
+            {
+              // Does it need this pass?
+              <Canvas imageArray={imageBank}/>
+            }
+            <canvas className="canvasHidden" id="canvas"></canvas>
+          </div>
         </section>
         <footer>
 

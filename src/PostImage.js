@@ -20,14 +20,9 @@ function PostImage(prop) {
         e.target.alt = imagesOnly[e.target.id].title
         e.target.title = imagesOnly[e.target.id].title
 
-
         // Remove object with matching index
         imagesOnly.splice(e.target.id, 1);
-
-        console.log(targetTitle, "e.target.id")
-        console.log(imagesOnly, "succesS?")
-
-    }
+    }  
 
     return (
         imagesOnly.slice(0, 16).map((image, index) => {
@@ -40,13 +35,8 @@ function PostImage(prop) {
             // Remove matching object
             // const indexToRemove = image.id
             // imagesOnly.splice(0, 1);
-            console.log(imagesOnly, 'No removal')
+            
             const remove = imagesOnly.splice(0, 1)
-
-            console.log(image, 'image argument')
-            console.log(imagesOnly, 'remove')
-            console.log(imagesOnly, 'original images only Array')
-
 
             return (
                 <div key={`imageContainer${index}`} className="imageContainer" >
