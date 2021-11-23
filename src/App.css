@@ -233,3 +233,9 @@ footer a {
     
 
 }
+
+@media print {
+  .headingOneBox, .bottomRow, footer {
+    display: none !important;
+  }
+}

@@ -1,4 +1,5 @@
 function PostImage(prop) {
+    // filter out videos
     let imagesOnly = prop.imageArray.filter(obj => {
         return obj.media_type === 'image'
     })
