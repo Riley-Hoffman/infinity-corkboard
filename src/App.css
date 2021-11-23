@@ -141,8 +141,6 @@ footer a {
   justify-content: center;
 }
 
-
-
  .loader + .headingOnBox .headingOne {
   font-size: 1rem;
   letter-spacing: 1.6px;
@@ -165,8 +163,6 @@ footer a {
   margin-top: 0px;
 }
 
-
-
 .canvasHidden {
   display: none;
 }
@@ -180,25 +176,8 @@ footer a {
   width: 100%;
 }
 
-
 .imageContainer {
   height: 20vh;
-  width: 25vw;
-}
-
-.checkbox {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.inputLabel {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  height: 24.8vh;
   width: 25vw;
 }
 

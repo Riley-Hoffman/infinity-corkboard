@@ -5,6 +5,7 @@ function Footer(prop) {
     const [footerLoadState, setFooterLoadState] = useState('')
 
     useEffect(() => {
+        // display return once images have loaded 
         const imageContainer = document.getElementsByClassName('imageContainer')
         if (imageContainer.length) {
             setFooterLoadState('loaded')

@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 function Canvas(prop) {
     const [bottomRowLoadState, setBottomRowLoadState] = useState('')
 
-// failing to render the canvas
+    // Compile images into a single canvas element when button is clicked
+    // failing to render the canvas
     const handleClick = (e) => {
 
         const canvas = document.getElementById("canvas");
@@ -29,6 +30,7 @@ function Canvas(prop) {
     }
 
     useEffect(() => {
+        // display return once images have loaded 
         const imageContainer = document.getElementsByClassName('imageContainer')
         if (imageContainer.length) {
             setBottomRowLoadState('loaded')

@@ -13,7 +13,6 @@ function PostImage(prop) {
         e.target.title = imagesOnly[e.target.id].title
 
         // AVOID RECURRING IMAGES 
-
         // Remove object with matching index
         imagesOnly.splice(e.target.id, 1);
     } 
@@ -28,10 +27,7 @@ function PostImage(prop) {
 
             return (
                 <div key={`imageContainer${index}`} className="imageContainer" >
-                    <label key={`label${index}`} htmlFor={index}>
-                        <input key={`input${index}`} className="checkbox" type="checkbox" id={`checkbox${index}`} />
                         <img key={`image${image.date}`} className="galleryImage" src={image.url} alt={image.title} title={image.title} id={index} onClick={handleClick} />
-                    </label>
                 </div>
             )
         })
