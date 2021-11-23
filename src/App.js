@@ -3,6 +3,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import PostImage from './PostImage';
 import Canvas from './Canvas';
+import HeadingOne from './HeadingOne'
 // import Refresh from './Refresh';
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
         <section className="corkboard">
           <form action="_blank">
              {/* look into <canvas> */}
-            <div className="wrapper">
+            <div className="wrapper loader">
              
               {
                 <PostImage
@@ -62,10 +63,13 @@ function App() {
             <p>Pin your favourite images. Refresh what's left</p>
             {
               // Does it need this pass?
-              <Canvas imageArray={imageBank}/>
+              <Canvas imageArray={imageBank} />
             }
-            <canvas className="canvasHidden" id="canvas"></canvas>
           </div>
+          {
+            <HeadingOne />
+          }
+          <canvas className="canvasHidden" id="canvas"></canvas>
         </section>
         <footer>
 

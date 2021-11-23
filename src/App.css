@@ -39,6 +39,7 @@ body {
   font-weight: 700;
   font-family: 'Raleway', sans-serif;
   font-family: 'Fira Sans', sans-serif;
+  letter-spacing: 1.5px;
 }
 
 button {
@@ -80,6 +81,39 @@ img {
   bottom: 0;
 }
 
+.loader:empty {
+  position: relative;
+  top: calc(50% - 4em);
+  left: calc(50% - 4em);
+  width: 6em;
+  height: 6em;
+  margin: 180px 0;
+  border: 1.1em solid rgba(0, 0, 0, 0.2);
+  border-left: 1.1em solid #000000;
+  border-radius: 50%;
+  animation: load8 1.1s infinite linear;
+}
+
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+div.headingOneBox {
+  align-items: center;
+  justify-content: center;
+}
+
+ h1.headingOne {
+  font-size: 4rem;
+  padding: 20px 0;
+}
+
+
 .canvasHidden {
   display: none;
 }
@@ -119,6 +153,8 @@ img {
   justify-content: space-between;
   padding: 20px 50px 0px;
 }
+
+
 
 
 
