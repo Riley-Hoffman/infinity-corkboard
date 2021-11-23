@@ -1,4 +1,7 @@
+import { useState, useEffect } from 'react';
 function Canvas(prop) {
+    const [bottomRowLoadState, setBottomRowLoadState] = useState('')
+
 // failing to render the canvas
     const handleClick = (e) => {
 
@@ -23,12 +26,23 @@ function Canvas(prop) {
             // ctx.drawImage(img4, 0, 0);
             // ctx.drawImage(img5, 0, 0);
             // ctx.drawImage(img6, 0, 0);
-       
-
     }
 
+    useEffect(() => {
+        const imageContainer = document.getElementsByClassName('imageContainer')
+        if (imageContainer.length) {
+            setBottomRowLoadState('loaded')
+        }
+
+    })
+        
+
+
     return (
-        <button onClick={handleClick}>Click Me</button>
+        <div className={`bottomRow ${bottomRowLoadState}`}>
+            <p>Click or tap images change them.</p>
+            <button onClick={handleClick}>Save Gallery</button>
+        </div>
     )
 
 }

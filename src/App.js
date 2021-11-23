@@ -4,6 +4,13 @@ import { useState, useEffect } from 'react';
 import PostImage from './PostImage';
 import Canvas from './Canvas';
 import HeadingOne from './HeadingOne'
+import Footer from './Footer';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+
+// library.add(fabGithub);
+
 // import Refresh from './Refresh';
 
 function App() {
@@ -40,40 +47,37 @@ function App() {
         setImageBank(/*[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map(sixteen => */jsonResponse/*[sixteen])*/)
   
       })
-
   }, [])
+  
 
   
     return (
       <div className="App">
-        <section className="corkboard">
-          <form action="_blank">
-             {/* look into <canvas> */}
-            <div className="loader">
-             
+        <main>
+          <section className="corkboard">
+            {/* <form action="_blank"> */}
+              {/* look into <canvas> */}
+              <div className="loader">
+              
+                {
+                  <PostImage
+                    imageArray={imageBank}
+                  />
+
+                }
+              </div>
               {
-                <PostImage
-                  imageArray={imageBank}
-                />
-
+                <HeadingOne />
               }
-            </div>
-            {
-              <HeadingOne />
-            }
-          </form>
-          <div className="flexBox bottomRow">
-            <p>Pin your favourite images. Refresh what's left</p>
-            {
-              // Does it need this pass?
-              <Canvas imageArray={imageBank} />
-            }
-          </div>
-          <canvas className="canvasHidden" id="canvas"></canvas>
-        </section>
-        <footer>
-
-        </footer>
+            {/* </form> */}
+              {
+                // Does it need this pass?
+                <Canvas imageArray={imageBank} />
+              }
+            <canvas className="canvasHidden" id="canvas"></canvas>
+          </section>
+        </main>
+        <Footer />
       </div>
     );
 }

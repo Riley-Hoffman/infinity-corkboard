@@ -1,5 +1,4 @@
 function PostImage(prop) {
-
     let imagesOnly = prop.imageArray.filter(obj => {
         return obj.media_type === 'image'
     })
@@ -17,14 +16,15 @@ function PostImage(prop) {
 
         // Remove object with matching index
         imagesOnly.splice(e.target.id, 1);
-    }  
+    } 
+
 
     return (
         // First 16 Images On Load
         imagesOnly.slice(0, 16).map((image, index) => {
             // AVOID RECURRING IMAGES 
             // Remove each image object that is posted
-            const remove = imagesOnly.splice(0, 1)
+            imagesOnly.splice(0, 1)
 
             return (
                 <div key={`imageContainer${index}`} className="imageContainer" >
