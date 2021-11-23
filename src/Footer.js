@@ -16,10 +16,12 @@ function Footer(prop) {
 
     return (
         <footer className={footerLoadState}>
-            <p>Created at Juno College</p>
+            <a href="https://junocollege.com/">Created at Juno College</a>
             <div className="flexBox">
+                <a href="https://github.com/Riley-Hoffman?tab=repositories">
                 <p>Riley Hoffman | Developer</p>
                 <FontAwesomeIcon icon={faGithub} />
+                </a>
             </div>
         </footer>
     )
