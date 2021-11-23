@@ -49,7 +49,7 @@ function App() {
         <section className="corkboard">
           <form action="_blank">
              {/* look into <canvas> */}
-            <div className="wrapper loader">
+            <div className="loader">
              
               {
                 <PostImage
@@ -58,6 +58,9 @@ function App() {
 
               }
             </div>
+            {
+              <HeadingOne />
+            }
           </form>
           <div className="flexBox bottomRow">
             <p>Pin your favourite images. Refresh what's left</p>
@@ -66,9 +69,6 @@ function App() {
               <Canvas imageArray={imageBank} />
             }
           </div>
-          {
-            <HeadingOne />
-          }
           <canvas className="canvasHidden" id="canvas"></canvas>
         </section>
         <footer>
