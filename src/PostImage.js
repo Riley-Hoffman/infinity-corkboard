@@ -18,19 +18,21 @@ function PostImage(prop) {
         imagesOnly.splice(e.target.id, 1);
     } 
 
-
+     
     return (
         // First 16 Images On Load
         imagesOnly.slice(0, 16).map((image, index) => {
             // AVOID RECURRING IMAGES 
             // Remove each image object that is posted
             imagesOnly.splice(0, 1)
+            if (imagesOnly.length > 50) {
 
             return (
                 <div key={`imageContainer${index}`} className="imageContainer" >
                         <img key={`image${image.date}`} className="galleryImage" src={image.url} alt={image.title} title={image.title} id={index} onClick={handleClick} />
                 </div>
             )
+        }
         })
 
 

@@ -34,6 +34,7 @@ body, ul, h1, h2, h3, p { margin: 0; padding: 0; } ul { list-style: none; } a { 
 html {
   background-color: rgb(14, 14, 15);
 }
+
 body, button {
   color: #07bfbf;
   font-size: 1.9rem;
@@ -55,6 +56,11 @@ a:hover {
 
 button {
   margin-bottom: 20px;
+}
+
+header.sr-only {
+  justify-content: center;
+  padding: 10px 0;
 }
 
 h1 {
@@ -141,29 +147,29 @@ footer a {
   position: relative;
 }
 
-.headingOneBox {
+.headingPBox {
   align-items: center;
   justify-content: center;
 }
 
- .loader + .headingOnBox .headingOne {
-  font-size: 1rem;
-  letter-spacing: 1.6px;
+ .loader + .headingPBox .headingOne {
+  font-size: 4rem;
+  letter-spacing: 1.8px;
 }
 
-.loader:empty + .headingOneBox .headingOne {
+.loader:empty + .headingPBox .headingOne {
   font-size: 7rem;
   letter-spacing: 3px;
 }
 
-.loader + .headingOneBox {
+.loader + .headingPBox {
   position: absolute;
   left: 50%;
   bottom: 1%;
   margin-top: 8px;
 }
 
-.loader:empty + .headingOneBox {
+.loader:empty + .headingPBox {
   position: static;
   margin-top: 0px;
 }
@@ -177,7 +183,6 @@ footer a {
   display: none;
   justify-content: space-between;
   padding: 20px 0px 0px;
-  width: 100%;
   height: 10vh;
 }
 
@@ -192,26 +197,69 @@ footer a {
 
 
 
-/* @media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion) {
+  .loader:empty {
+    animation: load8 10s infinite linear;
+  }
+
+  @keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
   
-} */
+  
+}
 
 /* Portrait tablet and small desktops */
 @media (max-width: 1200px) {
-    
+    header.sr-only {
+      position: static !important; 
+      height: initial; 
+      width: initial; 
+      overflow: initial; 
+      clip: initial;
+      white-space: initial;
+    }
+    .headingPBox {
+      display: none;
+    }
+
+    .bottomRow {
+      justify-content: space-evenly;
+    }
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 960px) {
-   
+  .bottomRow {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  button {
+    width: 44%;
+    margin-top: 10px;
+  }
+ footer {
+   flex-direction: column;
+ }  
+
+ footer .flexBox {
+   margin-top: 20px;
+ }
+
+ footer a {
+   width: fit-content;;
+ }
 }
 
 /* Medium phones and down */
 @media (max-width: 675px) {
-  .loader + .headingOneBox {
-  position: static;
-  margin-top: 20px;
-}
+
    
 }
 
@@ -222,7 +270,7 @@ footer a {
 }
 
 @media print {
-  .headingOneBox, .bottomRow, footer {
+  .headingPBox, .bottomRow, footer {
     display: none !important;
   }
 }
