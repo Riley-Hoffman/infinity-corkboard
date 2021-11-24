@@ -16,7 +16,6 @@ import Footer from './Footer';
 
 // promises / chaining.then
 
-// netflify deployment - css hover and active effects not working properly
 
 function App() {
   // imageBank for first grid display
@@ -40,27 +39,8 @@ function App() {
         return response.json();
       })
       .then((jsonResponse) => {
-        // Send All 25 images to imageBank for initial load
         setImageBank(jsonResponse)
       })
-      // .then(() => {
-        
-      //   const url = new URL(apiUrl);
-      //   url.search = new URLSearchParams({
-      //     api_key: apiKey,
-      //     count: 100
-      //   })
-        
-      //   fetch(url)
-      //   .then((response) => {   
-      //     return response.json() 
-      //   })
-      //   .then((jsonResponse) => {
-      //     console.log(fetch(jsonResponse), 'jsonResponse 2')
-      //      // Send 100 images to imageBank to expand bank
-      //     setImageBank(jsonResponse)
-      //   })
-      // })
   }, [])
 
   console.log(imageBank)
@@ -86,3 +66,25 @@ function App() {
 }
 
 export default App;
+
+
+
+
+// .then(() => {
+
+      //   const url = new URL(apiUrl);
+      //   url.search = new URLSearchParams({
+      //     api_key: apiKey,
+      //     count: 100
+      //   })
+
+      //   fetch(url)
+      //   .then((response) => {   
+      //     return response.json() 
+      //   })
+      //   .then((jsonResponse) => {
+      //     console.log(fetch(jsonResponse), 'jsonResponse 2')
+      //      // Send 100 images to imageBank to expand bank
+      //     setImageBank(jsonResponse)
+      //   })
+      // })

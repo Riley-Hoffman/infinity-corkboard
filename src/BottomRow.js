@@ -21,8 +21,6 @@ function BottomRow(prop) {
     const handleCloseSaveClick = (e) => {
         saveModal.style.display = `none`;
     }
-        
-
 
     return (
         <div className={`bottomRow ${bottomRowLoadState} wrapper`}>
@@ -40,9 +38,7 @@ function BottomRow(prop) {
                 <button className="modalButton" onClick={handleCloseSaveClick}>Ok</button>
             </div>
         </div>
-        
     )
-
 }
 
 export default BottomRow

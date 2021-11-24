@@ -13,8 +13,6 @@ function Footer(prop) {
 
     }, [prop])
 
-
-
     return (
         <footer className={`wrapper ${footerLoadState}`}>
             <a href="https://junocollege.com/">Created at Juno College</a>
@@ -26,7 +24,6 @@ function Footer(prop) {
             </div>
         </footer>
     )
-
 }
 
 export default Footer

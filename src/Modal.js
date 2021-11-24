@@ -6,6 +6,7 @@ function Modal(prop) {
         errorModal.style.visibility = `hidden`;
         window.location.reload();
     }
+    
 return (
     <div className="errorModal">
         <p>Oops, there are no more images! Refresh to start again with new images.</p>

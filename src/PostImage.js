@@ -31,17 +31,11 @@ function PostImage(prop) {
             // Remove each image object that is posted
             imagesOnly.splice(0, 1)
 
-            // This causes it to wait for alll images. without is publish first 16 then replaces them
-            
-            // if (imagesOnly.length < 50) {
             return (
                 <div key={`imageContainer${index}`} className="imageContainer" >
                         <img key={`image${image.date}`} className="galleryImage" src={image.url} alt={image.title} title={image.title} id={index} onClick={handleClick} />
                 </div>
             )
-        //     } else if (imagesOnly.length > 50){
-        //     return (null);
-        // }
         })
 
 
