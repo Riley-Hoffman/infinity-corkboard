@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import PostImage from './PostImage';
 import HeadingP from './HeadingP'
 import Header from './Header'
+import Modal from './Modal'
 import BottomRow from './BottomRow';
 import Footer from './Footer';
 
@@ -14,6 +15,8 @@ import Footer from './Footer';
 // is there a way to fetch first 16 and then bring in the rest after first images appear
 
 // promises / chaining.then
+
+// netflify deployment worked but getting errors on api call (even thought results load), and css hover and active effects not working properly
 
 function App() {
   // imageBank for first grid display
@@ -28,7 +31,7 @@ function App() {
     const url = new URL(apiUrl);
     url.search = new URLSearchParams({
       api_key: apiKey,
-      count: 25,
+      count: 40,
     })
 
     fetch(url)
@@ -37,29 +40,29 @@ function App() {
         return response.json();
       })
       .then((jsonResponse) => {
-        console.log(fetch(jsonResponse), 'jsonResponse 1')
         // Send All 25 images to imageBank for initial load
         setImageBank(jsonResponse)
-  
       })
-      .then(() => {
-        const url = new URL(apiUrl);
-        url.search = new URLSearchParams({
-          api_key: apiKey,
-          count: 100
-        })
-        fetch(url)
-        .then((response) => {
-          return response.json();
-        })
-        .then((jsonResponse) => {
-          console.log(fetch(jsonResponse), 'jsonResponse 2')
-           // Send 100 images to imageBank to expand bank
-          setImageBank(jsonResponse)
-        })
-      })
+      // .then(() => {
+        
+      //   const url = new URL(apiUrl);
+      //   url.search = new URLSearchParams({
+      //     api_key: apiKey,
+      //     count: 100
+      //   })
+        
+      //   fetch(url)
+      //   .then((response) => {   
+      //     return response.json() 
+      //   })
+      //   .then((jsonResponse) => {
+      //     console.log(fetch(jsonResponse), 'jsonResponse 2')
+      //      // Send 100 images to imageBank to expand bank
+      //     setImageBank(jsonResponse)
+      //   })
+      // })
   }, [])
-  
+
   console.log(imageBank)
   
     return (
@@ -67,20 +70,14 @@ function App() {
         <main>
           <section className="corkboard">
             <Header />
+            <Modal />
               <div className="loader">  
-                {
                   <PostImage
-                    imageArray={imageBank}
+                  imageArray={imageBank}
                   />
-
-                }
               </div>
-              {
                 <HeadingP />
-              }
-              {
               <BottomRow imageArray={imageBank}/>
-              }
           </section>
         </main>
         <Footer imageArray={imageBank}/>
