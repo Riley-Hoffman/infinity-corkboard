@@ -11,7 +11,7 @@ function Footer(prop) {
             setFooterLoadState('loaded')
         }
 
-    })
+    }, [prop])
 
 
 

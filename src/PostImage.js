@@ -32,6 +32,8 @@ function PostImage(prop) {
                         <img key={`image${image.date}`} className="galleryImage" src={image.url} alt={image.title} title={image.title} id={index} onClick={handleClick} />
                 </div>
             )
+        } else {
+            return (null);
         }
         })
 

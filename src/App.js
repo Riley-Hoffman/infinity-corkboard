@@ -6,9 +6,6 @@ import HeadingP from './HeadingP'
 import Header from './Header'
 import BottomRow from './BottomRow';
 import Footer from './Footer';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 // things to look into:
 
@@ -21,20 +18,12 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 function App() {
   // imageBank for first grid display
   const [imageBank, setImageBank] = useState([])
-  
-
-  const apiKey = `bBLy3UXdINwKz9wF5H7c3bENIessM51W3V2tpXR4`;
-  const apiUrl = `https://api.nasa.gov/planetary/apod`;
-  
-  
-// store a bank with extra imgs
-// 
-// for selection use State - where it's selected or to reload
-// do on click on the image the do a function where you swap the url/attributes
-// or 2 arrays selected, unselected 
 
   useEffect(() => {
   
+    const apiKey = `bBLy3UXdINwKz9wF5H7c3bENIessM51W3V2tpXR4`;
+    const apiUrl = `https://api.nasa.gov/planetary/apod`;
+    
     // API information  
     const url = new URL(apiUrl);
     url.search = new URLSearchParams({
@@ -90,11 +79,11 @@ function App() {
                 <HeadingP />
               }
               {
-                <BottomRow />
+              <BottomRow imageArray={imageBank}/>
               }
           </section>
         </main>
-        <Footer />
+        <Footer imageArray={imageBank}/>
       </div>
     );
 }

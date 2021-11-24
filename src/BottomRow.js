@@ -10,7 +10,7 @@ function BottomRow(prop) {
             setBottomRowLoadState('loaded')
         }
 
-    })
+    }, [prop])
         
 
 
