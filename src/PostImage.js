@@ -3,13 +3,13 @@ function PostImage(prop) {
     let imagesOnly = prop.imageArray.filter(obj => {
         return obj.media_type === 'image'
     })
-    const modal = document.querySelector('.modal')
+    const errorModal = document.querySelector('.errorModal')
    
     // Update images when clicked
     const handleClick = (e) => {
         if (imagesOnly[0] === undefined) {
             console.log(imagesOnly, 'error')
-            modal.style.display = `block`;
+            errorModal.style.display = `block`;
         } else {
                 /* take an image from array */
                 e.target.src = imagesOnly[0].url

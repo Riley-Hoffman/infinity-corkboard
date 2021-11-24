@@ -16,7 +16,7 @@ import Footer from './Footer';
 
 // promises / chaining.then
 
-// netflify deployment worked but getting errors on api call (even thought results load), and css hover and active effects not working properly
+// netflify deployment - css hover and active effects not working properly
 
 function App() {
   // imageBank for first grid display
