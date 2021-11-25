@@ -30,7 +30,7 @@ function App() {
     const url = new URL(apiUrl);
     url.search = new URLSearchParams({
       api_key: apiKey,
-      count: 40,
+      count: 20,
     })
 
     fetch(url)

@@ -55,8 +55,8 @@ a {
   padding: 6px 0;
 }
 
-a:hover {
-  color: rgba(219, 96, 230, 0.62);
+a:hover, button:hover, .saveModal > button:nth-child(2):hover, .errorModal > button:nth-child(2):hover {
+  color: rgba(168, 128, 172, 0.62);
 }
 
 h1 {
