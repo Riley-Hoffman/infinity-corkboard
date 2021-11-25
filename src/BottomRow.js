@@ -29,11 +29,11 @@ function BottomRow(prop) {
             <div className="saveModal">
                 <ol>
                 <p>To save your finised board:</p>
-                <li>Go to your broswer's File menu</li> 
+                <li>Go to your browser's File menu</li> 
                 <li>Choose Print</li>
                     <li>Set Destination as Save To PDF</li> 
                     <li>Set Orientation to Landscape</li> 
-                    <li>click save</li>
+                    <li>Click Save</li>
                 </ol>
                 <button className="modalButton" onClick={handleCloseSaveClick}>Ok</button>
             </div>
