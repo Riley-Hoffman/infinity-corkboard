@@ -11,6 +11,7 @@ function BottomRow(prop) {
         }
 
     }, [prop])
+    // Show saveModal when How To Save is clicked
     const saveModal = document.querySelector('.saveModal')
 
     const handleSaveClick = (e) => {
@@ -26,9 +27,10 @@ function BottomRow(prop) {
         <div className={`bottomRow ${bottomRowLoadState} wrapper`}>
             <p>Click or tap images change them.</p>
             <button onClick={handleSaveClick}>How To Save</button>
+            {/* Instructions to save the image (print display is style to hide page elements) */}
             <div className="saveModal">
                 <ol>
-                    <p>To save your finised board:</p>
+                    <p>To save your finished board:</p>
                     <li>Go to your browser's File menu</li> 
                     <li>Choose Print</li>
                     <li>Set Destination as Save To PDF</li> 

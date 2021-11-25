@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import PostImage from './PostImage';
 import HeadingP from './HeadingP'
 import Header from './Header'
-import Modal from './Modal'
+import ErrorModal from './ErrorModal'
 import BottomRow from './BottomRow';
 import Footer from './Footer';
 
@@ -42,15 +42,13 @@ function App() {
         setImageBank(jsonResponse)
       })
   }, [])
-
-  console.log(imageBank)
   
     return (
       <div className="App">
         <main>
           <section className="corkboard">
             <Header />
-            <Modal />
+            <ErrorModal />
               <div className="loader">  
                   <PostImage
                   imageArray={imageBank}
@@ -66,25 +64,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-// .then(() => {
-
-      //   const url = new URL(apiUrl);
-      //   url.search = new URLSearchParams({
-      //     api_key: apiKey,
-      //     count: 100
-      //   })
-
-      //   fetch(url)
-      //   .then((response) => {   
-      //     return response.json() 
-      //   })
-      //   .then((jsonResponse) => {
-      //     console.log(fetch(jsonResponse), 'jsonResponse 2')
-      //      // Send 100 images to imageBank to expand bank
-      //     setImageBank(jsonResponse)
-      //   })
-      // })

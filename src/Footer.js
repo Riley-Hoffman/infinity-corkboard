@@ -10,7 +10,6 @@ function Footer(prop) {
         if (imageContainer.length) {
             setFooterLoadState('loaded')
         }
-
     }, [prop])
 
     return (
