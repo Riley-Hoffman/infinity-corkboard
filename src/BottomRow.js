@@ -33,8 +33,8 @@ function BottomRow(prop) {
                     <p>To save your finished board:</p>
                     <li>Go to your browser's File menu</li> 
                     <li>Choose Print</li>
-                    <li>Set Destination as Save To PDF</li> 
-                    <li>Set Orientation to Landscape</li> 
+                    <li>Set Destination: Save To PDF</li> 
+                    <li>Set Orientation: Landscape</li> 
                     <li>Click Save</li>
                 </ol>
                 <button className="modalButton" onClick={handleCloseSaveClick}>Ok</button>

@@ -42,7 +42,7 @@ function PostImage(prop) {
             return (
                 <div key={`imageContainer${index}`} className="imageContainer" >
                     <input key={`input${index}`} placeholder={index} type="radio" onClick={handleInput} />
-                    <img key={`image${image.date}`} className="galleryImage" src={image.url} alt={image.title} title={image.title} id={index} onClick={handleClick} />
+                    <img key={`image${image.date}`} src={image.url} alt={image.title} title={image.title} id={index} onClick={handleClick} />
                 </div>
             )
         })

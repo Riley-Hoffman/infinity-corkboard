@@ -1,3 +1,13 @@
+// INFINITY CORKBOARD
+
+/* 
+
+Pulls images for NASA into a grid allowing the user to 
+customize the grid by refreshing individual images on 
+click and save the full grid to PDF. 
+
+*/
+
 import './App.css';
 
 import { useState, useEffect } from 'react';
@@ -7,15 +17,6 @@ import Header from './Header'
 import ErrorModal from './ErrorModal'
 import BottomRow from './BottomRow';
 import Footer from './Footer';
-
-// things to look into:
-
-// screen capture API
-
-// is there a way to fetch first 16 and then bring in the rest after first images appear
-
-// promises / chaining.then
-
 
 function App() {
   // imageBank for first grid display
