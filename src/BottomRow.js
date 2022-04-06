@@ -25,7 +25,7 @@ function BottomRow(prop) {
 
     return (
         <div className={`bottomRow ${bottomRowLoadState} wrapper`}>
-            <p>Click or tap images change them.</p>
+            <p className="clickText">Click or tap images change them.</p>
             <button onClick={handleSaveClick}>How To Save</button>
             {/* Instructions to save the image (print display is style to hide page elements) */}
             <div className="saveModal">
