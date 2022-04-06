@@ -23,10 +23,10 @@ function App() {
   const [imageBank, setImageBank] = useState([])
 
   useEffect(() => {
-  
+
     const apiKey = `bBLy3UXdINwKz9wF5H7c3bENIessM51W3V2tpXR4`;
     const apiUrl = `https://api.nasa.gov/planetary/apod`;
-    
+
     // API information  
     const url = new URL(apiUrl);
     url.search = new URLSearchParams({
@@ -36,32 +36,32 @@ function App() {
 
     fetch(url)
       .then((response) => {
-        
+
         return response.json();
       })
       .then((jsonResponse) => {
         setImageBank(jsonResponse)
       })
   }, [])
-  
-    return (
-      <div className="App">
-        <main>
-          <section className="corkboard">
-            <Header />
-            <ErrorModal />
-              <div className="loader">  
-                  <PostImage
-                  imageArray={imageBank}
-                  />
-              </div>
-                <HeadingP />
-              <BottomRow imageArray={imageBank}/>
-          </section>
-        </main>
-        <Footer imageArray={imageBank}/>
-      </div>
-    );
+
+  return (
+    <div className="App">
+      <main>
+        <section className="corkboard">
+          <Header />
+          <ErrorModal />
+          <div className="loader">
+            <PostImage
+              imageArray={imageBank}
+            />
+          </div>
+          <HeadingP />
+          <BottomRow imageArray={imageBank} />
+        </section>
+      </main>
+      <Footer imageArray={imageBank} />
+    </div>
+  );
 }
 
 export default App;
